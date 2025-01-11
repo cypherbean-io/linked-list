@@ -38,4 +38,14 @@ class LinkedList
     @tail
   end
 
+  def at(index)
+    return nil if index < 0 || index >= @size
+
+    current_node = @head
+    index.times do
+      current_node = current_node.next_node
+    end
+    current_node
+  end
+
 end
