@@ -48,4 +48,20 @@ class LinkedList
     current_node
   end
 
+  def pop
+    return nil if @size.zero?
+    popped = @tail
+    if @head == @tail
+      @head = nil
+      @tail = nil
+    else
+      current_node = @head
+      current_node = current_node.next_node while current_node.next_node != @tail
+      current_node.next_node = nil
+      @tail = current_node
+    end
+    @size -= 1 
+    popped
+  end
+
 end
